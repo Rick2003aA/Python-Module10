@@ -14,7 +14,7 @@ def fireball(target: str) -> str:
     return f"Fireball hists {target}"
 
 
-def iceball(damage: int) -> int:
+def ice_ball(damage: int) -> int:
     return damage
 
 
@@ -76,10 +76,11 @@ def spell_sequence(spells: list[callable]) -> callable:
 def main():
     combined = spell_combiner(fireball, heal)
     print(combined("Dragon"))
-    umplified = power_amplifier(iceball, 3)
-    print(umplified(10))
+    amplified = power_amplifier(ice_ball, 3)
+    print(f"Original: {ice_ball(10)}  Amplified: {amplified(10)}")
     condition = conditional_caster(is_dragon, heal)
     print(condition("Dragon"))
+    print(condition("Wizard"))
     sequenced = spell_sequence([fireball, heal])
     print(sequenced("Wizard"))
 
