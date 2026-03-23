@@ -57,7 +57,7 @@ def conditional_caster(condition: callable, spell: callable) -> callable:
     def caster(target: str):
         if condition(target):
             return spell(target)
-        return "Spell fizzled"
+        return "Spell fizzled..."
     return caster
 
 
